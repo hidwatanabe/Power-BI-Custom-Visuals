@@ -1,0 +1,82 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "ID",
+      "kind": "Grouping",
+      "name": "ID"
+    },
+    {
+      "displayName": "X",
+      "kind": "GroupingOrMeasure",
+      "name": "X"
+    },
+    {
+      "displayName": "Y",
+      "kind": "GroupingOrMeasure",
+      "name": "Y"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "scriptResult": {
+        "dataInput": {
+          "table": {
+            "rows": {
+              "select": [
+                {
+                  "for": {
+                    "in": "ID"
+                  }
+                },
+                {
+                  "for": {
+                    "in": "X"
+                  }
+                },
+                {
+                  "for": {
+                    "in": "Y"
+                  }
+                }
+              ],
+              "dataReductionAlgorithm": {
+                "top": {}
+              }
+            }
+          }
+        },
+        "script": {
+          "scriptProviderDefault": "R",
+          "scriptOutputType": "html",
+          "source": {
+            "objectName": "rcv_script",
+            "propertyName": "source"
+          },
+          "provider": {
+            "objectName": "rcv_script",
+            "propertyName": "provider"
+          }
+        }
+      }
+    }
+  ],
+  "objects": {
+    "rcv_script": {
+      "properties": {
+        "provider": {
+          "type": {
+            "text": true
+          }
+        },
+        "source": {
+          "type": {
+            "scripting": {
+              "source": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "suppressDefaultTitle": true
+}
